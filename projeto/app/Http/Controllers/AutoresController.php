@@ -24,7 +24,7 @@ class AutoresController extends Controller
 
 		//$autor = Autor::findOrFail($idAutor);
 		//$autor = Autor::find($idAutor);
-		$autor = Autor::where('id_autor',$idAutor)->first();
+		$autor = Autor::where('id_autor',$idAutor)->with('livros')->first();
 
 		return view('autores.show',[
 			'autor'=>$autor

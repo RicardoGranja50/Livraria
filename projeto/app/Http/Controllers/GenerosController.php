@@ -23,8 +23,7 @@ class GenerosController extends Controller
 
 		//$genero = Genero::findOrFail($idGenero);
 		//$genero = Genero::find($idGenero);
-		$genero = Genero::where('id_genero',$idGenero)->first();
-
+		$genero = Genero::where('id_genero',$idGenero)->with('livros')->first();
 		return view('generos.show',[
 			'genero'=>$genero
 		]);

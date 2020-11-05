@@ -24,7 +24,16 @@ class LivrosController extends Controller
 
 		//$livro = Livro::findOrFail($idLivro);
 		//$livro = Livro::find($idLivro);
-		$livro = Livro::where('idl',$idLivro)->first();
+
+		//$livro ="inf";
+		//$livro = Livro::where('titulo','like','%'.$idLivro.'%')->get();
+
+		//$livro ="inf";
+		//$livro = Livro::where('titulo','like','%'.$idLivro.'%')->orWhere('sinopse', 'like','%'.$livro.'%')->get();
+
+		
+
+		$livro = Livro::where('id_livro',$idLivro)->first();
 
 		return view('livros.show',[
 			'livro'=>$livro

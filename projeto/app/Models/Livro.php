@@ -9,6 +9,6 @@ class livro extends Model
 {
     use HasFactory;
 
-    protected $primaryKey="idl";
+    protected $primaryKey="id_livro";
     protected $table="livros";
 }

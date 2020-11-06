@@ -1,3 +1,5 @@
+@extends('layout')
+@section('pag')
 <ul>
 	@foreach($livros as $livro)
 		<li>
@@ -8,3 +10,13 @@
 	@endforeach
 </ul>
 {{$livros->render()}}
+@endsection
+
+@section('conteudo')
+<form method="post" action="{{route('processar.form')}}">
+        @csrf
+<label for="name"> Titulo </label>
+<input type="text" name="nome">
+<button type="submit"> Enviar </button>
+</form>
+@endsection

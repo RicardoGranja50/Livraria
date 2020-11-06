@@ -12,8 +12,12 @@ class Autor extends Model
     protected $primaryKey="id_autor";
     protected $table="autores";
 
-    public function livros(){
+    //public function livros(){
 
-    	return $this->hasMany('App\Models\Livro','id_autor');
+    	//return $this->hasMany('App\Models\Livro','id_autor');
+    //}
+
+    public function livros(){
+    	return $this->belongsToMany('App\Models\Livro','autores_livros','id_autor','id_livro')->withTimestamps();
     }
 }

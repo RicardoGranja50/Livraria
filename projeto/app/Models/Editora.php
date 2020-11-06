@@ -11,5 +11,9 @@ class Editora extends Model
 
     protected $primaryKey="id_editora";
     protected $table="editoras";
+
+    public function livros(){
+    	return $this->belongsToMany('App\Models\Livro','edicoes','id_editora','id_livro')->withTimestamps();
+    }
 }
 

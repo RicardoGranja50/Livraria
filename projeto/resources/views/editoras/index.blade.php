@@ -1,3 +1,5 @@
+@extends('layout')
+@section('pag')
 <ul>
 	@foreach($editoras as $editora)
 		<li>
@@ -8,3 +10,4 @@
 	@endforeach
 </ul>
 {{$editoras->render()}}
+@endsection

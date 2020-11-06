@@ -1,3 +1,5 @@
+@extends('layout')
+@section('pag')
 <ul>
 	@foreach($autores as $autor)
 		<li>
@@ -8,3 +10,4 @@
 	@endforeach
 </ul>
 {{$autores->render()}}
+@endsection

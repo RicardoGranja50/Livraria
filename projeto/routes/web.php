@@ -28,3 +28,5 @@ Route::get('/autores/{id}/show','App\Http\Controllers\AutoresController@show')->
 Route::get('/editoras/{id}/show','App\Http\Controllers\EditorasController@show')->name('editoras.show');
 
 Route::get('/generos/{id}/show','App\Http\Controllers\GenerosController@show')->name('generos.show'); 
+
+Route::post('/mostrar', 'App\Http\Controllers\PortalController@processarForm')->name('processar.form');

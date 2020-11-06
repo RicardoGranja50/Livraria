@@ -1,3 +1,5 @@
+@extends('layout')
+@section('pag')
 <ul>
 	@foreach($generos as $genero)
 		<li>
@@ -8,3 +10,4 @@
 	@endforeach
 </ul>
 {{$generos->render()}}
+@endsection

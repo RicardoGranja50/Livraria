@@ -18,9 +18,19 @@ class livro extends Model
 		return $this->belongsTo('App\Models\Genero', 'id_genero');
 	}
 
-	public function autor(){
+	//public function autor(){
 
-		return $this->belongsTo('App\Models\Autor', 'id_autor');
-	}
+		//return $this->belongsTo('App\Models\Autor', 'id_autor');
+	//}
+
+	public function autores(){
+    	return $this->belongsToMany('App\Models\Autor','autores_livros','id_livro','id_autor')->withTimestamps();
+    }
+
+
+    public function editoras(){
+    	return $this->belongsToMany('App\Models\Editora','edicoes','id_livro','id_editora')->withTimestamps();
+    }
+
 }
 

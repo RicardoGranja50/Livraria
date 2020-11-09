@@ -40,13 +40,14 @@ class LivrosController extends Controller
 		]);
 	}
 
-	public function mostrar(){
+	public function mostrar(Request $request){
 
-		$livro = Livro::where('id_livro',$idLivro)->with(['genero', 'autores', 'editoras'])->first();
+		$pesquisa = $request->pesquisa;
+
+		$livro = Livro::where('titulo','like','%'.$pesquisa.'%')->with('autores')->first();
 
 		return view('livros.mostrar',[
 			'livro'=>$livro
 		]);
-
 	}
 }

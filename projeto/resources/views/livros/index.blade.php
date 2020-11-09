@@ -16,7 +16,7 @@
 <form method="post" action="{{route('processar.form')}}">
         @csrf
 <label for="name"> Titulo </label>
-<input type="text" name="nome">
+<input type="text" name="pesquisa">
 <button type="submit"> Enviar </button>
 </form>
 @endsection
